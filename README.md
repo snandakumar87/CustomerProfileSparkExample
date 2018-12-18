@@ -1,4 +1,4 @@
-# CustomerProfileSparkExample
+# Customer Profile Spark Example
 
 This demo shows how we can define a guided decision table in Red Hat decision manager and get the kjar imported as dependency
 inside of a spark application. The spark job reads a customer profile (in json format) with real time events and a set of
@@ -11,23 +11,23 @@ Red Hat Decision Manager by importing the Repository link. Since the Spark Appli
 this has build and deployed so that it is available in the local maven repo. For the purpose of testing, i have added 
 a static version of the rule mvn jar in the repo. 
 
-Installing Spark:
+# Installing Spark:
 Download spark from https://spark.apache.org/downloads.html
 
-Starting Spark Master:
+# Starting Spark Master:
 From the Spark directory: ./sbin/start-master.sh
 
-Starting Spark Slave (Single Node Cluster):
+# Starting Spark Slave (Single Node Cluster):
 ./sbin/start-slave.sh <master-spark-URL> --webui-port 8090
 
-Configuration in the Spark Application Code:
+# Configuration in the Spark Application Code:
 Adjust the location of the jsonFileSrc and jsonFileDest relative to where the project is available.
 
-Build the Application code:
+# Build the Application code:
 cd CustomerProfileSparkExample
 mvn clean install
 
-Submit Spark Job:
+# Submit Spark Job:
 spark-submit  --deploy-mode cluster 
 --num-executors 8 --executor-cores 5 
 --executor-memory 4G --conf "spark.driver.extraJavaOptions=-Diop.version=4.1.0.0" 
@@ -38,8 +38,8 @@ Change the Spark Master URL and the location of the jar file in the above comman
 
 Once the job completes, navigate to the jsonFileDest to see the generated output file.
 
-CustomerProfileInput:
-
+# CustomerProfileInput:
+```
 {
    "customerName":"TEST_CUSTOMER",
    "customerAccountNumber":"6544678990008",
@@ -85,10 +85,10 @@ CustomerProfileInput:
       }
    ]
 }
+```
 
-
-Customer Profile Output:
-
+# Customer Profile Output:
+```
 {
    "customerName":"TEST_CUSTOMER",
    "customerAccountNumber":"6544678990008",
@@ -137,13 +137,9 @@ Customer Profile Output:
       }
    ]
 }
+```
 
-
-
-
-
-
-Common Issues:
+# Common Issues:
 
 Some of the common issues you might see during the above process are:
 1) Exception in thread "main" java.lang.SecurityException: Invalid signature file digest for Manifest main attributes
