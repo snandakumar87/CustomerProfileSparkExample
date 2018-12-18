@@ -6,10 +6,14 @@ training models which can be fed in from within a big data analysis engine (usin
 CustomerProfile with useful events which can be sent to downstream systems for taking action. The events are filtered by passing 
 them through a guided decision table which analyses real time events against training models analyzed over a historic time period.
 
+![Image of Guided Rule]
+(https://github.com/snandakumar87/CustomerProfileSparkExample/unnamed.png)
+
 Refer to https://github.com/snandakumar87/PersonalizationRules for the rules project. The project can be imported on 
 Red Hat Decision Manager by importing the Repository link. Since the Spark Application code needs the mvn dependency for the rule,
 this has build and deployed so that it is available in the local maven repo. For the purpose of testing, i have added 
 a static version of the rule mvn jar in the repo. 
+
 
 # Installing Spark:
 Download spark from https://spark.apache.org/downloads.html
