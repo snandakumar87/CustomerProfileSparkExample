@@ -90,52 +90,48 @@ Once the job completes, navigate to the jsonFileDest to see the generated output
 # Customer Profile Output:
 ```
 {
-   "customerName":"TEST_CUSTOMER",
-   "customerAccountNumber":"6544678990008",
-   "customerGeo":"EST",
-   "events":[
-      {
-         "eventCategory":"CC_BALANCE_PAYMENT",
-         "eventSource":"CUSTOMERCARE",
-         "eventDate":"2018-02-23T18:48:43.511Z",
-         "eventId":"87987",
-         "eventValue":"LATE_PAYMENT"
-      },
-      {
-         "eventCategory":"CC_TRANSACTION",
-         "eventValue":"GROCERY",
-         "eventSource":"POS",
-         "eventDate":"2018-02-23T14:25:43.511Z",
-         "eventId":"87989"
-      },
-      {
-         "eventCategory":"DISPUTE",
-         "eventSource":"ONLINE",
-         "eventDate":"2018-02-23T10:25:43.511Z",
-         "eventId":"87990",
-         "eventValue":"CASE_CREATED"
-      }
-   ],
-   "models":[
-      {
-         "modelName":"CUSTOMER_GOOD_STANDING",
-         "confidence":100
-      },
-      {
-         "modelName":"HIGH_BALANCE_DEBT",
-         "confidence":100
-      }
-   ],
-   "eventAnalysisModels":[
-      {
-         "eventEffectiveness":"ALERT",
-         "eventResponsePayload":"Late Payment Waiver"
-      },
-      {
-         "eventEffectiveness":"OFFER",
-         "eventResponsePayload":"Balance Transfer offer"
-      }
-   ]
+  "customerName" : "TEST_CUSTOMER",
+  "customerAccountNumber" : "6544678990008",
+  "customerGeo" : "EST",
+  "events" : [ {
+    "eventCategory" : "CC_BALANCE_PAYMENT",
+    "eventSource" : "CUSTOMERCARE",
+    "eventDate" : 1519411723511,
+    "eventId" : "87987",
+    "eventValue" : "LATE_PAYMENT"
+  }, {
+    "eventCategory" : "CC_TRANSACTION",
+    "eventSource" : "POS",
+    "eventDate" : 1519395943511,
+    "eventId" : "87989",
+    "eventValue" : "GROCERY"
+  }, {
+    "eventCategory" : "DISPUTE",
+    "eventSource" : "ONLINE",
+    "eventDate" : 1519381543511,
+    "eventId" : "87990",
+    "eventValue" : "CASE_CREATED"
+  }, {
+    "eventCategory" : "CC_BALANCE_PAYMENT",
+    "eventSource" : "CUSTOMERCARE",
+    "eventDate" : 1519411723511,
+    "eventId" : "87987",
+    "eventValue" : "MIN_DUE"
+  } ],
+  "models" : [ {
+    "modelName" : "CUSTOMER_GOOD_STANDING",
+    "confidence" : 100
+  }, {
+    "modelName" : "HIGH_BALANCE_DEBT",
+    "confidence" : 100
+  } ],
+  "eventAnalysisModels" : [ {
+    "eventEffectiveness" : "ALERT",
+    "eventResponsePayload" : "Late Payment Waiver Offered"
+  }, {
+    "eventEffectiveness" : "OFFER",
+    "eventResponsePayload" : "Balance Transfer offer"
+  } ]
 }
 ```
 
