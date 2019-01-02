@@ -17,13 +17,13 @@ a static version of the rule mvn jar in the repo.
 Download spark from https://spark.apache.org/downloads.html
 
 # Starting Spark Master:
-From the Spark directory: ./sbin/start-master.sh
+From the Spark directory: ./sbin/start-master.sh --webui-port 8090 (use a port of your choice)
 
 # Starting Spark Slave (Single Node Cluster):
-./sbin/start-slave.sh <master-spark-URL> --webui-port 8090
+./sbin/start-slave.sh <master-spark-URL> 
 
 # Configuration in the Spark Application Code:
-Adjust the location of the jsonFileSrc and jsonFileDest relative to where the project is available.
+Adjust the location of the jsonFileSrc and jsonFileDest relative to where the project is available. Also in Main.java, modify the spark URL so that the appropriate spark context is fetched.
 
 # Build the Application code:
 cd CustomerProfileSparkExample
